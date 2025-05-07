@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="group_import_pos_order" model="res.groups">
+        <field name="name">Puede crear órdenes de POS</field>
+        <field name="comment">Este grupo permite crear órdenes de POS desde la vista de lista.</field>
+    </record>
+</odoo>
+

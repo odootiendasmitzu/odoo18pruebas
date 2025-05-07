@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="account_analytic_dist_model_tree_view_inh" model="ir.ui.view">
+            <field name="name">account_analytic_dist_model_tree_inh</field>
+            <field name="model">account.analytic.distribution.model</field>
+            <field name="inherit_id" ref="analytic.account_analytic_distribution_model_tree_view"/>
+	    <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+		    <field name="sales_team_id" optional="show"/>
+		    <field name="warehouse_id" optional="show"/>
+                </field>
+            </field>
+        </record>
+        <record id="account_analytic_dist_model_form_view_inh" model="ir.ui.view">
+            <field name="name">account_analytic_dist_model_form_inh</field>
+            <field name="model">account.analytic.distribution.model</field>
+            <field name="inherit_id" ref="analytic.account_analytic_distribution_model_form_view"/>
+	    <field name="arch" type="xml">
+                <field name="product_id" position="before">
+		    <field name="sales_team_id" />
+		    <field name="warehouse_id" />
+                </field>
+            </field>
+        </record>
+
+
+
+
+</odoo>
+
+
+

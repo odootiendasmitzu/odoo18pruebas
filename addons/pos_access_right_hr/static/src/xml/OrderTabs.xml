@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+<!--    Inheriting OrderTabs template for adding the disable feature-->
+    <t name="pos_access_right_hr.OrderTabs" owl="1"
+       t-inherit="point_of_sale.OrderTabs" t-inherit-mode="extension">
+
+       <xpath expr="//ListContainer" position="attributes">
+           <attribute name="onClickPlus">() => this.try_add_order()</attribute>
+       </xpath>
+    </t>
+</templates>

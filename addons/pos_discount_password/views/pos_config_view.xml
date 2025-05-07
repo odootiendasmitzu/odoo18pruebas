@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pos_config_view_form_inh" model="ir.ui.view">
+        <field name="name">pos.config.form.view</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+                    <div id="restaurant_on_create" position="after">
+                        <div id="pos_discount_password" class="row mt16 o_settings_container">
+                            <setting>
+                                    <field name="global_discount_password"/>
+                            </setting>
+                        </div>
+                    </div>
+
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+<!--    Inheriting ControlButtons template for adding the button disable feature-->
+    <t name="pos_access_right_hr.ControlButtons" owl="1"
+       t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+
+       <xpath expr="//button[.//i[contains(@class, 'fa-trash')]]" position="replace">
+                <button class="btn btn-secondary btn-lg py-5" t-on-click="() => this.try_delete_order()" t-att-disabled="disable_delete_order()">
+                    <i class="fa fa-trash me-1" role="img" /> Cancel Order 
+                </button>
+       </xpath>
+    </t>
+</templates>

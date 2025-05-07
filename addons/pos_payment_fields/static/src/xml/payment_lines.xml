@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="point_of_sale.PaymentScreenPaymentLines" t-inherit-mode="extension">
+          <xpath expr="//div[hasclass('paymentline')]//div[hasclass('payment-infos')]//div[hasclass('payment-amount')]" position="before">
+                               <t t-if="line.payment_method_id.type != 'cash' ">
+                                 <div class="payment_card px-3">
+                                     <span>4 Dígitos: <t t-esc="line.card_no or ''"/> </span>
+                                </div>
+                              </t>
+        </xpath>
+
+
+        <xpath expr="//div[hasclass('payment-amount')]" position="before">
+                                         <t t-if="line.payment_method_id.type != 'cash' and line.isSelected() ">
+                                    <div class="payment_card px-3">
+                                         <input id="card_no" name="card_no"
+                                           t-att-placeholder="'0000'"
+                                           t-on-change="() => this.updateCardNo(line)"
+                                           type="char" t-att-value ="line.card_no or ''" />
+
+                                    </div>
+                               </t>
+        </xpath>
+
+    </t>
+
+</templates>
